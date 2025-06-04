@@ -7,34 +7,34 @@ import Link from "next/link"
 
 const heroImages = [
   {
-    src: "/placeholder.svg?height=800&width=1200",
-    title: "Excellence in Education",
+    src: "/images/clg.jpeg?height=800&width=1200",
+    title: "LNCT",
     subtitle: "Shaping Future Leaders",
     description: "Discover world-class education at LNCT Group",
   },
   {
-    src: "/placeholder.svg?height=800&width=1200",
-    title: "Innovation & Research",
+    src: "/images/jnct.jpeg?height=600&width=1200",
+    title: "JNCT",
     subtitle: "Cutting-edge Technology",
     description: "Leading research and innovation in Central India",
   },
   {
-    src: "/placeholder.svg?height=800&width=1200",
-    title: "Global Partnerships",
+    src: "/images/lnctuni.jpeg?height=800&width=1200",
+    title: "LNCT UNIVERSITY",
     subtitle: "International Exposure",
-    description: "Connecting students to global opportunities",
-  },
-  {
-    src: "/placeholder.svg?height=800&width=1200",
-    title: "Industry Integration",
-    subtitle: "Career Excellence",
     description: "95% placement rate with top companies",
   },
   {
-    src: "/placeholder.svg?height=800&width=1200",
-    title: "Holistic Development",
-    subtitle: "Beyond Academics",
-    description: "Nurturing well-rounded personalities",
+    src: "/images/lnm4.jpg?height=800&width=1200",
+    title: "LN MEDICAL COLLEGE",
+    subtitle: "India's Top Private Medical College in Bhopal ",
+    description: "Provides world class yet economical medical education to deserving medical aspirants.",
+  },
+  {
+    src: "/images/lnctschool.jpeg?height=800&width=1200",
+    title: "LNCT WORLD SCHOOL",
+    subtitle: "Nurturing well-rounded personalities",
+    description: "Strives to understand and fulfill the needs of each and every learner",
   },
 ]
 
