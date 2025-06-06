@@ -6,6 +6,8 @@ import { GraduationCap, Users, Award, Globe } from "lucide-react"
 
 export default function AboutSection() {
   const [isVisible, setIsVisible] = useState(false)
+  const [showStats, setShowStats] = useState(false)
+  const [showCards, setShowCards] = useState([false, false, false, false])
   const sectionRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
@@ -13,6 +15,23 @@ export default function AboutSection() {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true)
+
+          // Stagger the stats animation
+          setTimeout(() => setShowStats(true), 800)
+
+          // Stagger the cards animation
+          showCards.forEach((_, index) => {
+            setTimeout(
+              () => {
+                setShowCards((prev) => {
+                  const newState = [...prev]
+                  newState[index] = true
+                  return newState
+                })
+              },
+              1200 + index * 200,
+            )
+          })
         }
       },
       { threshold: 0.1 },
@@ -55,49 +74,96 @@ export default function AboutSection() {
     <section ref={sectionRef} className="py-20 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div
-            className={`transition-all duration-1000 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"}`}
-          >
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">About LNCT Group</h2>
-            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+          <div className="space-y-6">
+            {/* Title Animation */}
+            <h2
+              className={`text-4xl font-bold text-gray-900 transition-all duration-1000 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+            >
+              About LNCT Group
+            </h2>
+
+            {/* First Paragraph Animation */}
+            <p
+              className={`text-lg text-gray-600 leading-relaxed transition-all duration-1000 delay-300 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+            >
               LNCT Group stands as a beacon of educational excellence in Central India, with over two decades of
               commitment to nurturing talent and fostering innovation. Our comprehensive ecosystem spans across
               universities, colleges, schools, healthcare institutions, and business enterprises.
             </p>
-            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+
+            {/* Second Paragraph Animation */}
+            <p
+              className={`text-lg text-gray-600 leading-relaxed transition-all duration-1000 delay-500 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+            >
               From engineering and management to medical sciences and basic education, we provide a holistic learning
               environment that prepares students for global challenges while maintaining strong ethical values and
               social responsibility.
             </p>
-            <div className="grid grid-cols-2 gap-6">
-              <div className="text-center transform hover:scale-105 transition-all duration-300">
-                <div className="text-3xl font-bold text-blue-600 mb-1">50,000+</div>
+
+            {/* Statistics Animation */}
+            <div className="grid grid-cols-2 gap-6 pt-4">
+              <div
+                className={`text-center transform transition-all duration-800 hover:scale-105 ${
+                  showStats ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-8 scale-95"
+                }`}
+              >
+                <div className="text-3xl font-bold text-blue-600 mb-1 animate-pulse">50,000+</div>
                 <div className="text-gray-600">Alumni Network</div>
               </div>
-              <div className="text-center transform hover:scale-105 transition-all duration-300">
-                <div className="text-3xl font-bold text-blue-600 mb-1">95%</div>
+              <div
+                className={`text-center transform transition-all duration-800 delay-200 hover:scale-105 ${
+                  showStats ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-8 scale-95"
+                }`}
+              >
+                <div className="text-3xl font-bold text-blue-600 mb-1 animate-pulse">95%</div>
                 <div className="text-gray-600">Placement Rate</div>
               </div>
             </div>
           </div>
 
-          <div
-            className={`grid grid-cols-1 sm:grid-cols-2 gap-6 transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"}`}
-          >
+          {/* Feature Cards with Individual Animations */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {features.map((feature, index) => {
               const IconComponent = feature.icon
               return (
                 <Card
                   key={index}
-                  className="p-6 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 group border-2 hover:border-blue-200"
-                  style={{ animationDelay: `${index * 0.2}s` }}
+                  className={`p-6 hover:shadow-xl transition-all duration-700 transform hover:-translate-y-2 group border-2 hover:border-blue-200 ${
+                    showCards[index] ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-12 scale-95"
+                  }`}
                 >
                   <CardContent className="p-0">
-                    <IconComponent className="h-12 w-12 text-blue-600 mb-4 group-hover:scale-110 transition-transform duration-300" />
-                    <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">
+                    <div className="relative overflow-hidden">
+                      <IconComponent
+                        className={`h-12 w-12 text-blue-600 mb-4 group-hover:scale-110 transition-all duration-500 ${
+                          showCards[index] ? "animate-bounce" : ""
+                        }`}
+                        style={{ animationDuration: "2s", animationIterationCount: "1" }}
+                      />
+                      <div
+                        className={`absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-lg`}
+                      />
+                    </div>
+                    <h3
+                      className={`text-xl font-semibold text-gray-900 mb-3 group-hover:text-blue-600 transition-all duration-500 ${
+                        showCards[index] ? "animate-fadeInUp" : ""
+                      }`}
+                    >
                       {feature.title}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                    <p
+                      className={`text-gray-600 leading-relaxed transition-all duration-500 delay-100 ${
+                        showCards[index] ? "animate-fadeInUp" : ""
+                      }`}
+                    >
+                      {feature.description}
+                    </p>
                   </CardContent>
                 </Card>
               )
@@ -105,6 +171,46 @@ export default function AboutSection() {
           </div>
         </div>
       </div>
+
+      {/* Custom CSS for additional animations */}
+      <style jsx>{`
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        .animate-fadeInUp {
+          animation: fadeInUp 0.6s ease-out forwards;
+        }
+        
+        @keyframes slideInLeft {
+          from {
+            opacity: 0;
+            transform: translateX(-50px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+        
+        @keyframes slideInRight {
+          from {
+            opacity: 0;
+            transform: translateX(50px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+      `}</style>
     </section>
   )
 }
