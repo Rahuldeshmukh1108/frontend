@@ -19,7 +19,7 @@ export default function InstitutionPage() {
       description:
         "Premier university offering undergraduate, postgraduate, and doctoral programs across multiple disciplines.",
       location: "Bhopal, Madhya Pradesh",
-      established: "2003",
+      established: "2015",
       programs: ["Engineering", "Management", "Computer Applications", "Research"],
       website: "https://lnctu.ac.in",
       image: "/placeholder.svg?height=300&width=400",

@@ -7,31 +7,31 @@ import Link from "next/link"
 
 const heroImages = [
   {
-    src: "/images/clg.jpeg?height=800&width=1200",
+    src: "/images/main.jpg?height=800&width=1200",
     title: "LNCT",
     subtitle: "Shaping Future Leaders",
     description: "Discover world-class education at LNCT Group",
   },
   {
-    src: "/images/jnct.jpeg?height=600&width=1200",
+    src: "/images/jnct.jpg?height=600&width=1200",
     title: "JNCT",
     subtitle: "Cutting-edge Technology",
     description: "Leading research and innovation in Central India",
   },
   {
-    src: "/images/lnctuni.jpeg?height=800&width=1200",
+    src: "/images/uni2.jpg?height=800&width=1200",
     title: "LNCT UNIVERSITY",
     subtitle: "International Exposure",
     description: "95% placement rate with top companies",
   },
   {
-    src: "/images/lnm4.jpg?height=800&width=1200",
+    src: "/images/medical2.jpg?height=800&width=1200",
     title: "LN MEDICAL COLLEGE",
-    subtitle: "India's Top Private Medical College in Bhopal ",
+    subtitle: "Top Private Medical College in Bhopal",
     description: "Provides world class yet economical medical education to deserving medical aspirants.",
   },
   {
-    src: "/images/lnctschool.jpeg?height=800&width=1200",
+    src: "/images/school.jpg?height=800&width=1200",
     title: "LNCT WORLD SCHOOL",
     subtitle: "Nurturing well-rounded personalities",
     description: "Strives to understand and fulfill the needs of each and every learner",
@@ -108,7 +108,7 @@ export default function HeroSection() {
             <div className="space-y-8 animate-fade-in">
               <div className="space-y-6">
                 <div className="overflow-hidden">
-                  <h1 className="text-5xl lg:text-7xl font-bold leading-tight text-white animate-slide-up">
+                  <h1 className="text-3xl lg:text-5xl font-bold leading-tight text-white animate-slide-up">
                     {heroImages[currentSlide].title}
                     <span className="text-yellow-400 block animate-slide-up-delay">
                       {heroImages[currentSlide].subtitle}
