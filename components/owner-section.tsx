@@ -17,12 +17,12 @@ export default function OwnerSection() {
             <CardContent className="p-0">
               <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
                 <img
-                  src="/placeholder.svg?height=128&width=128"
+                  src="/images/jainarainchouksey.jpeg?height=128&width=128"
                   alt="Chairman"
                   className="w-28 h-28 rounded-full object-cover"
                 />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Dr. Anupam Chouksey</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">Mr. Jai Chouksey</h3>
               <p className="text-blue-600 font-semibold mb-4">Chairman & Founder</p>
               <Quote className="h-8 w-8 text-blue-300 mx-auto mb-4" />
               <p className="text-gray-600 italic">
@@ -36,13 +36,13 @@ export default function OwnerSection() {
             <CardContent className="p-0">
               <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
                 <img
-                  src="/placeholder.svg?height=128&width=128"
+                  src="/images/choukseymam.jpeg?height=128&width=128"
                   alt="Director"
                   className="w-28 h-28 rounded-full object-cover"
                 />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Mrs. Shubhra Chouksey</h3>
-              <p className="text-green-600 font-semibold mb-4">Director</p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">Mrs.Poonam Chouksey</h3>
+              <p className="text-green-600 font-semibold mb-4">Vice Chairperson</p>
               <Quote className="h-8 w-8 text-green-300 mx-auto mb-4" />
               <p className="text-gray-600 italic">
                 "We believe in nurturing not just academic excellence but also character and values that last a
@@ -55,13 +55,13 @@ export default function OwnerSection() {
             <CardContent className="p-0">
               <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center">
                 <img
-                  src="/placeholder.svg?height=128&width=128"
+                  src="/images/anupamchouksey.jpeg?height=128&width=128"
                   alt="Vice Chairman"
                   className="w-28 h-28 rounded-full object-cover"
                 />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Mr. Jai Chouksey</h3>
-              <p className="text-purple-600 font-semibold mb-4">Vice Chairman</p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">Dr.Anupam Chouksey</h3>
+              <p className="text-purple-600 font-semibold mb-4">Secretary</p>
               <Quote className="h-8 w-8 text-purple-300 mx-auto mb-4" />
               <p className="text-gray-600 italic">
                 "Innovation and technology are the pillars of modern education. We strive to stay ahead of the curve."
