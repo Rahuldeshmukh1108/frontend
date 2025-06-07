@@ -4,37 +4,41 @@ import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, BookOpen, Users, Award, ChevronLeft, ChevronRight } from "lucide-react"
 import Link from "next/link"
-
 const heroImages = [
   {
-    src: "/images/main.jpg?height=800&width=1200",
+    desktop: "/images/main.jpg?height=800&width=1200",
+    mobile: "/images/mobbg.jpg",
     title: "LNCT",
     subtitle: "Shaping Future Leaders",
     description: "Discover world-class education at LNCT Group",
   },
   {
-    src: "/images/newjnct.jpg?height=600&width=1200",
+    desktop: "/images/newjnct.jpg?height=600&width=1200",
+    mobile: "/images/mobbg.jpg",
     title: "JNCT",
     subtitle: "Cutting-edge Technology",
     description: "Leading research and innovation in Central India",
   },
   {
-    src: "/images/uni2.jpg?height=800&width=1200",
+    desktop: "/images/uni2.jpg?height=800&width=1200",
+    mobile: "/images/mobbg.jpg",
     title: "LNCT UNIVERSITY",
     subtitle: "International Exposure",
     description: "95% placement rate with top companies",
   },
   {
-    src: "/images/medical2.jpg?height=800&width=1200",
+    desktop: "/images/medical2.jpg?height=800&width=1200",
+    mobile: "/images/mobbg.jpg",
     title: "LN MEDICAL COLLEGE",
     subtitle: "Top Private Medical College in Bhopal",
-    description: "Provides world class yet economical medical education to deserving medical aspirants.",
+    description: "World-class yet economical medical education for deserving aspirants.",
   },
   {
-    src: "/images/school.jpg?height=800&width=1200",
+    desktop: "/images/school.jpg?height=800&width=1200",
+    mobile: "/images/mobbg.jpg",
     title: "LNCT WORLD SCHOOL",
     subtitle: "Nurturing well-rounded personalities",
-    description: "Strives to understand and fulfill the needs of each and every learner",
+    description: "Fulfilling the needs of every learner",
   },
 ]
 
@@ -57,6 +61,18 @@ export default function HeroSection() {
     setCurrentSlide((prev) => (prev - 1 + heroImages.length) % heroImages.length)
   }
 
+  const [isMobile, setIsMobile] = useState(false)
+
+useEffect(() => {
+  const checkMobile = () => {
+    setIsMobile(window.innerWidth < 768)
+  }
+
+  checkMobile()
+  window.addEventListener("resize", checkMobile)
+  return () => window.removeEventListener("resize", checkMobile)
+}, [])
+
   return (
     <section className="relative h-screen overflow-hidden">
       {/* Image Slider */}
@@ -68,7 +84,7 @@ export default function HeroSection() {
               index === currentSlide ? "opacity-100" : "opacity-0"
             }`}
           >
-            <img src={image.src || "/placeholder.svg"} alt={image.title} className="w-full h-full object-cover" />
+            <img src={isMobile ? image.mobile : image.desktop} alt={image.title} className="w-full h-full object-cover"/>
             <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
           </div>
         ))}
