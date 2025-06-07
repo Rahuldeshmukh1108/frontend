@@ -56,21 +56,20 @@ export default function AboutPage() {
               <CardContent className="p-0">
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h2>
                 <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                  To provide world-class education that empowers students with knowledge, skills, and values necessary
-                  to excel in their chosen fields and contribute meaningfully to society.
+                  To undertake interdisciplinary research and development by engaging the faculty and students in curricular, co-curricular and industry collaborated projects towards problem solving.
                 </p>
                 <ul className="space-y-3 text-gray-600">
                   <li className="flex items-start">
                     <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                    Excellence in teaching and learning
+                    To improve continually in the teaching-learning process by strengthening infrastructural facilities and faculty credentials.
                   </li>
                   <li className="flex items-start">
                     <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                    Innovation and research-driven approach
+                    To enhance proportion of skilled based courses beyond curriculum to create more employable graduates.
                   </li>
                   <li className="flex items-start">
                     <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                    Holistic development of students
+                    To inculcate human values, ethics and responsibility in our outgoing engineers by providing environment.
                   </li>
                 </ul>
               </CardContent>
@@ -80,8 +79,7 @@ export default function AboutPage() {
               <CardContent className="p-0">
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Vision</h2>
                 <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                  To be a globally recognized educational institution that creates leaders, innovators, and responsible
-                  citizens who drive positive change in the world.
+                  To be a premier institute where engineering education and research converge to produce engineers as responsible citizens.
                 </p>
                 <ul className="space-y-3 text-gray-600">
                   <li className="flex items-start">
