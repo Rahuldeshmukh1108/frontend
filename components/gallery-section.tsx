@@ -6,8 +6,8 @@ import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight, X, Eye } from "lucide-react"
 
 const galleryImages = [
-  { id: 1, src: "/images/i3.jpeg?height=400&width=600", alt: "Campus Main Building", category: "Campus" },
-  { id: 2, src: "/images/i2.jpeg?height=400&width=600", alt: "Modern Classroom", category: "Academics" },
+  { id: 1, src: "/images/main2.jpg?height=400&width=600", alt: "Campus Main Building", category: "Campus" },
+  { id: 2, src: "/images/class3.jpg?height=400&width=600", alt: "Modern Classroom", category: "Academics" },
   { id: 3, src: "/images/labs.jpg?height=400&width=600", alt: "Computer Laboratory", category: "Labs" },
   { id: 4, src: "/images/lib.jpg?height=400&width=600", alt: "Library Interior", category: "Facilities" },
   { id: 5, src: "/images/sports2.jpeg?height=400&width=600", alt: "Sports Complex", category: "Sports" },

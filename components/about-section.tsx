@@ -90,9 +90,16 @@ export default function AboutSection() {
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              LNCT Group stands as a beacon of educational excellence in Central India, with over two decades of
-              commitment to nurturing talent and fostering innovation. Our comprehensive ecosystem spans across
-              universities, colleges, schools, healthcare institutions, and business enterprises.
+             LNCT Group is a premier educational institution offering courses in Engineering, Management, Pharmacy, and Medical fields. With ISO-9001 certification and NBA-accredited programs, it attracts students nationwide. The 50-acre Bhopal campus features modern classrooms, research labs, Wi-Fi, hostels, digital library, sports facilities, and a vibrant, tech-enabled learning environment.
+
+
+
+
+
+
+
+
+
             </p>
 
             {/* Second Paragraph Animation */}
