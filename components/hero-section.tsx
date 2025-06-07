@@ -13,7 +13,7 @@ const heroImages = [
     description: "Discover world-class education at LNCT Group",
   },
   {
-    src: "/images/jnct.jpg?height=600&width=1200",
+    src: "/images/newjnct.jpg?height=600&width=1200",
     title: "JNCT",
     subtitle: "Cutting-edge Technology",
     description: "Leading research and innovation in Central India",

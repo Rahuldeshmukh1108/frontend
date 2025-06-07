@@ -17,19 +17,19 @@ export default function Footer() {
               fostering innovation across Central India.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
+              <a href="https://www.facebook.com/LNCTGroupOfCollege/" className="text-gray-400 hover:text-blue-400 transition-colors">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
+              <a href="https://x.com/lnct_group" className="text-gray-400 hover:text-blue-400 transition-colors">
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
+              <a href="https://www.instagram.com/lnctgroupofcolleges/?hl=en" className="text-gray-400 hover:text-blue-400 transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
+              <a href="https://in.linkedin.com/school/lnct-group-of-colleges/" className="text-gray-400 hover:text-blue-400 transition-colors">
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
+              <a href="https://www.youtube.com/@LnctBroadcastingChannel/videos" className="text-gray-400 hover:text-blue-400 transition-colors">
                 <Youtube className="h-5 w-5" />
               </a>
             </div>
@@ -59,16 +59,6 @@ export default function Footer() {
                   Contact
                 </Link>
               </li>
-              <li>
-                <Link href="/admissions" className="text-gray-300 hover:text-white transition-colors">
-                  Admissions
-                </Link>
-              </li>
-              <li>
-                <Link href="/careers" className="text-gray-300 hover:text-white transition-colors">
-                  Careers
-                </Link>
-              </li>
             </ul>
           </div>
 
@@ -77,7 +67,7 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">Academic Programs</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors">
+                <a href="https://lnct.ac.in/gallery/" className="text-gray-300 hover:text-white transition-colors">
                   Engineering
                 </a>
               </li>
@@ -116,18 +106,18 @@ export default function Footer() {
               <div className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 text-blue-400 mt-0.5 flex-shrink-0" />
                 <span className="text-gray-300">
-                  Kolar Road, Bhopal,
+                  LNCT Campus, Kalchuri Nagar, (P.O. Kolua) Raisen Road,
                   <br />
-                  Madhya Pradesh 462042
+                  Bhopal-462022 (M.P).
                 </span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-blue-400 flex-shrink-0" />
-                <span className="text-gray-300">+91 755 2740800</span>
+                <span className="text-gray-300">0755-6185300, 0755-6185300/1/2/3/4/5</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-blue-400 flex-shrink-0" />
-                <span className="text-gray-300">info@lnctgroup.in</span>
+                <a href="" className="text-gray-300 hover:underline" > info@lnctgroup.in </a>
               </div>
             </div>
           </div>
@@ -137,14 +127,11 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">© 2024 LNCT Group. All rights reserved.</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <Link href="/privacy" className="text-gray-400 hover:text-white text-sm transition-colors">
+              <Link href="https://lnct.ac.in/privacy-policy-2/" className="text-gray-400 hover:text-white text-sm transition-colors">
                 Privacy Policy
               </Link>
-              <Link href="/terms" className="text-gray-400 hover:text-white text-sm transition-colors">
+              <Link href="https://lnct.ac.in/terms-and-conditions/" className="text-gray-400 hover:text-white text-sm transition-colors">
                 Terms of Service
-              </Link>
-              <Link href="/sitemap" className="text-gray-400 hover:text-white text-sm transition-colors">
-                Sitemap
               </Link>
             </div>
           </div>
