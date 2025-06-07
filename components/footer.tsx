@@ -64,36 +64,21 @@ export default function Footer() {
 
           {/* Academic Programs */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Academic Programs</h3>
+            <h3 className="text-lg font-semibold mb-4">Office Hours</h3>
             <ul className="space-y-2">
               <li>
                 <a href="https://lnct.ac.in/gallery/" className="text-gray-300 hover:text-white transition-colors">
-                  Engineering
+                  Monday - Friday: 9:00 AM - 6:00 PM
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-300 hover:text-white transition-colors">
-                  Management
+                  Saturday: 9:00 AM - 2:00 PM
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-300 hover:text-white transition-colors">
-                  Medical Sciences
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors">
-                  Pharmacy
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors">
-                  Computer Applications
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors">
-                  Research Programs
+                  Sunday: Closed
                 </a>
               </li>
             </ul>
