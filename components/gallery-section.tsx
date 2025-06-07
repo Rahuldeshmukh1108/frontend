@@ -54,7 +54,7 @@ export default function GallerySection() {
           const firstImage = galleryImages.find((img) => img.category === category)
           return firstImage
         })
-        .filter(Boolean) as typeof galleryImages
+        .filter(Boolean)  as typeof galleryImages
     } else {
       // Show all images for the selected category
       return galleryImages.filter((img) => img.category === selectedCategory)
