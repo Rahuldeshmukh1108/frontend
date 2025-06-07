@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { MapPin, Phone, Mail, Clock, Navigation, ExternalLink } from "lucide-react"
+import { MapPin, Phone, Mail, Navigation, ExternalLink } from "lucide-react"
 
 export default function LocationSection() {
   const [selectedLocation, setSelectedLocation] = useState(0)
@@ -155,7 +155,7 @@ export default function LocationSection() {
 
 
               {/* Location overlay */}
-              {/* <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm rounded-lg p-4 shadow-lg max-w-sm">
+              { <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm rounded-lg p-4 shadow-lg max-w-sm">
                 <h4 className="font-semibold text-gray-900 mb-2">{locations[selectedLocation].name}</h4>
                 <p className="text-sm text-gray-600 mb-3">{locations[selectedLocation].address}</p>
                 <div className="flex gap-2">
@@ -176,36 +176,12 @@ export default function LocationSection() {
                     Email
                   </Button>
                 </div>
-              </div> */}
+              </div> }
             </div>
           </CardContent>
         </Card>
 
-        {/* Office Hours Card */}
-        <div className="mt-8 max-w-md mx-auto">
-          <Card className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
-            <CardContent className="p-6">
-              <div className="flex items-center mb-4">
-                <Clock className="h-6 w-6 text-blue-200 mr-3" />
-                <h3 className="text-xl font-semibold">Office Hours</h3>
-              </div>
-              <div className="space-y-2">
-                <div className="flex justify-between">
-                  <span>Monday - Friday:</span>
-                  <span className="font-semibold">9:00 AM - 6:00 PM</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Saturday:</span>
-                  <span className="font-semibold">9:00 AM - 2:00 PM</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Sunday:</span>
-                  <span className="font-semibold text-blue-200">Closed</span>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
+       
       </div>
     </section>
   )

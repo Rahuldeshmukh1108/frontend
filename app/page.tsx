@@ -16,8 +16,8 @@ export default function HomePage() {
       <DirectorySection />
       <AboutSection />
       <OwnerSection />
-      <LocationSection />
       <VirtualTourSection />
+      <LocationSection />
       <GallerySection />
       <Footer />
     </div>
