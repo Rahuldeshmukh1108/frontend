@@ -14,8 +14,8 @@ export default function LocationSection() {
       address: "Kolar Road, Bhopal, Madhya Pradesh 462042",
       phone: "+91 755 2740800",
       email: "info@lnctu.ac.in",
-      coordinates: "23.2599,77.4126",
-      mapUrl: "https://maps.google.com/?q=23.2599,77.4126",
+      coordinates: "23.2514407581099,77.52465896518126",
+      mapUrl: "https://maps.app.goo.gl/kxVfM2kztXa9Qjo16",
       description: "Our flagship campus with state-of-the-art facilities and modern infrastructure.",
     },
     {
@@ -23,23 +23,24 @@ export default function LocationSection() {
       address: "Indore, Madhya Pradesh 452020",
       phone: "+91 731 2555555",
       email: "info@lnctindore.ac.in",
-      coordinates: "22.7196,75.8577",
-      mapUrl: "https://maps.google.com/?q=22.7196,75.8577",
+      coordinates: "22.626830043431344,75.75502564003308",
+      mapUrl: "https://maps.app.goo.gl/vmmxjGud5wom9urB9",
       description: "Expanding our reach in the commercial capital of Madhya Pradesh.",
     },
     {
-      name: "LNCT Bilaspur Campus",
-      address: "Bilaspur, Chhattisgarh 495001",
+      name: "LNCT Jabalpur Campus",
+      address: "Jabalpur, Madhya Pradesh 482053",
       phone: "+91 7752 123456",
       email: "info@lnctbilaspur.ac.in",
-      coordinates: "22.0797,82.1409",
-      mapUrl: "https://maps.google.com/?q=22.0797,82.1409",
+      coordinates: "23.153836134562567,79.79603550193742",
+      mapUrl: "https://maps.app.goo.gl/EFTGHhpKB8KeT5S66",
       description: "Serving the educational needs of Chhattisgarh region.",
     },
   ]
 
+
   // Google Maps embed URL with multiple locations
-  const mapEmbedUrl = `https://www.google.com/maps/embed/v1/view?key=YOUR_API_KEY&center=23.2599,77.4126&zoom=6&maptype=roadmap`
+ const mapEmbedUrl = `https://www.google.com/maps/embed/v1/view?key=AIzaSyC886x88iX1x7E9ZQF37YJUMzA-YJlenVY&center=${locations[selectedLocation].coordinates}&zoom=14&maptype=roadmap`
 
   return (
     <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-100">
@@ -142,18 +143,19 @@ export default function LocationSection() {
           <CardContent className="p-0">
             <div className="aspect-video bg-gray-100 relative">
               <iframe
-                src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.0234567890123!2d${locations[selectedLocation].coordinates.split(",")[1]}!3d${locations[selectedLocation].coordinates.split(",")[0]}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z${locations[selectedLocation].coordinates}!5e0!3m2!1sen!2sin!4v1234567890123`}
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="w-full h-full"
-              />
+  src={mapEmbedUrl}
+  width="100%"
+  height="100%"
+  style={{ border: 0 }}
+  allowFullScreen
+  loading="lazy"
+  referrerPolicy="no-referrer-when-downgrade"
+  className="w-full h-full"
+/>
+
 
               {/* Location overlay */}
-              <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm rounded-lg p-4 shadow-lg max-w-sm">
+              {/* <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm rounded-lg p-4 shadow-lg max-w-sm">
                 <h4 className="font-semibold text-gray-900 mb-2">{locations[selectedLocation].name}</h4>
                 <p className="text-sm text-gray-600 mb-3">{locations[selectedLocation].address}</p>
                 <div className="flex gap-2">
@@ -174,7 +176,7 @@ export default function LocationSection() {
                     Email
                   </Button>
                 </div>
-              </div>
+              </div> */}
             </div>
           </CardContent>
         </Card>
