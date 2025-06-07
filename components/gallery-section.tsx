@@ -54,7 +54,7 @@ export default function GallerySection() {
           const firstImage = galleryImages.find((img) => img.category === category)
           return firstImage
         })
-        .filter(Boolean) as typeof galleryImages
+        .filter(Boolean)  as typeof galleryImages
     } else {
       // Show all images for the selected category
       return galleryImages.filter((img) => img.category === selectedCategory)
@@ -101,9 +101,9 @@ export default function GallerySection() {
   // Determine grid layout based on category
   const getGridLayout = () => {
     if (selectedCategory === "All") {
-      return "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+      return "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
     } else {
-      return "grid-cols-1 md:grid-cols-2 lg:grid-cols-2"
+      return "grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
     }
   }
 
@@ -167,7 +167,7 @@ export default function GallerySection() {
         <div
           className={`
           transition-all duration-300 ease-in-out
-          ${isAnimating ? "opacity-0 transform scale-95" : "opacity-100 transform scale-100"}
+          ${isAnimating ? "opacity-0 transform scale-90" : "opacity-100 transform scale-100"}
         `}
         >
           <div className={`grid ${getGridLayout()} gap-6 md:gap-8`}>
