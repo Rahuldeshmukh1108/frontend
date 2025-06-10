@@ -9,7 +9,7 @@ export default function InstitutionPage() {
   const institutionStats = [
     { label: "Total Institutions", value: "25+", icon: GraduationCap },
     { label: "Students Enrolled", value: "50,000+", icon: Users },
-    { label: "Cities Covered", value: "10+", icon: MapPin },
+    { label: "Cities Covered", value: "5+", icon: MapPin },
     { label: "Years of Excellence", value: "20+", icon: GraduationCap },
   ]
 
