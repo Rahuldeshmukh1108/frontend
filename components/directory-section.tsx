@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { ExternalLink, GraduationCap, Building2, Factory, Search, ChevronDown, ChevronUp } from "lucide-react"
+import { url } from "inspector"
 
 const websites = [
   // Education Category
@@ -22,6 +23,20 @@ const websites = [
     category: "Education",
     type: "University",
     icon: GraduationCap,
+  },
+  {
+    name: "JNCT BHOPAL",
+    url: "https://jnctbhopal.ac.in",
+    category: "Education",
+    type: "College",
+    icon: GraduationCap,
+  },
+  {
+name: "LNCT Main",
+url: "https://lnct.ac.in",
+category: "Education",
+type: "College",
+icon: GraduationCap,
   },
   { name: "JNCN College", url: "https://jncn.ac.in", category: "Education", type: "College", icon: GraduationCap },
   {
