@@ -14,33 +14,33 @@ export default function InstitutionPage() {
   ]
 
   const featuredInstitutions = [
+    { name: "LNCT",
+      description: "32+ Years of Academic Excellence and Discipline.",
+      location: "Raisen road,Bhopal,Madhya Pradesh",
+      established: "1994",
+      programs: ["Engineering","Management", "Computer Applications","Artificial Intelligence", "Masters"],
+      website: "https://lnct.ac.in/lnct-college/",
+      image: "/images/main2.jpg?height=300&width=400",
+      
+    },
     {
-      name: "LNCT University",
+     name: "LNCT University",
       description:
         "Premier university offering undergraduate, postgraduate, and doctoral programs across multiple disciplines.",
-      location: "Bhopal, Madhya Pradesh",
+      location: " Kolar road ,Bhopal, Madhya Pradesh",
       established: "2015",
-      programs: ["Engineering", "Management", "Computer Applications", "Research"],
+      programs: ["Engineering", "Computer Applications", "Research"],
       website: "https://lnctu.ac.in",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/images/lnctuni.jpeg?height=300&width=400",
     },
     {
-      name: "LNCT World Schools",
-      description: "Modern educational institution providing quality school education with international standards.",
-      location: "Multiple Locations",
-      established: "2010",
-      programs: ["Primary Education", "Secondary Education", "Higher Secondary"],
-      website: "https://lnctworldschools.com",
-      image: "/placeholder.svg?height=300&width=400",
-    },
-    {
-      name: "Indore LNMC",
-      description: "Leading medical college providing comprehensive medical education and healthcare services.",
+      name: "JNCT",
+      description: "It is considered to be unique in engineering education as it is firmly rooted in local soil and capable of articulating Indian ethos",
       location: "Indore, Madhya Pradesh",
-      established: "2008",
-      programs: ["MBBS", "MD/MS", "Nursing", "Paramedical"],
-      website: "https://indorelnmc.com",
-      image: "/placeholder.svg?height=300&width=400",
+      established: "2003",
+      programs: ["Engineering", "Computer Applications", "Management"],
+      website: "https://www.jnctbhopal.ac.in/",
+      image: "/images/jnctt.jpg?height=300&width=400",
     },
   ]
 
@@ -49,7 +49,7 @@ export default function InstitutionPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-900 to-indigo-900 text-white py-20">
+      <section className="bg-gradient-to-br from-purple-900 to-black text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-5xl font-bold mb-6">Our Institutions</h1>
