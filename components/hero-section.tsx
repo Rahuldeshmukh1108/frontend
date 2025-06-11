@@ -65,7 +65,9 @@ export default function HeroSection() {
 
 useEffect(() => {
   const checkMobile = () => {
-    setIsMobile(window.innerWidth < 768)
+    setIsMobile(window.innerWidth < 1440
+      
+    )
   }
 
   checkMobile()
@@ -140,7 +142,7 @@ useEffect(() => {
                 <Link href="#directory">
                   <Button
                     size="lg"
-                    className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                    className="bg-yellow-500 hover:bg-yellow-600 cursor-pointer text-black font-semibold transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
                   >
                     Explore Our Institutions
                     <ArrowRight className="ml-2 h-5 w-5" />
@@ -150,7 +152,7 @@ useEffect(() => {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="border-white text-white hover:bg-white hover:text-black transform hover:scale-105 transition-all duration-300 backdrop-blur-sm"
+                    className="border-white text-black cursor-pointer hover:bg-white hover:text-black transform hover:scale-105 transition-all duration-300 backdrop-blur-sm"
                   >
                     Learn More
                   </Button>
