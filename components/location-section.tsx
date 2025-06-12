@@ -119,7 +119,7 @@ export default function LocationSection() {
 
         {/* Enhanced Map Section */}
         <Card className="overflow-hidden">
-          <CardHeader className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
+          <CardHeader className="bg-gradient-to-r from-purple-900 to-black text-white">
             <CardTitle className="flex items-center justify-between">
               <div className="flex items-center">
                 <MapPin className="h-6 w-6 mr-3" />
