@@ -1,6 +1,6 @@
-import Navbar from "@/components/navbar"
-import Footer from "@/components/footer"
-import DirectorySection from "@/components/directory-section"
+import Navbar from "@/components/user/navbar"
+import Footer from "@/components/user/footer"
+import DirectorySection from "@/components/user/directory-section"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { GraduationCap, Users, MapPin, ExternalLink } from "lucide-react"
@@ -9,7 +9,7 @@ export default function InstitutionPage() {
   const institutionStats = [
     { label: "Total Institutions", value: "25+", icon: GraduationCap },
     { label: "Students Enrolled", value: "50,000+", icon: Users },
-    { label: "Cities Covered", value: "5+", icon: MapPin },
+    { label: "Cities Covered", value: "10+", icon: MapPin },
     { label: "Years of Excellence", value: "20+", icon: GraduationCap },
   ]
 
@@ -49,7 +49,7 @@ export default function InstitutionPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900  text-white py-20">
+      <section className="bg-gradient-to-br from-purple-900 to-black text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-5xl font-bold mb-6">Our Institutions</h1>

@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { ExternalLink, GraduationCap, Building2, Factory, Search, ChevronDown, ChevronUp } from "lucide-react"
-import { url } from "inspector"
+//  import { url } from "inspector"
 
 const websites = [
   // Education Category
@@ -165,7 +165,6 @@ export default function DirectorySection() {
   }, [searchTerm, selectedCategory])
 
   const visibleWebsites = isExpanded ? filteredWebsites : filteredWebsites.slice(0, visibleCount)
-  const hasMore = filteredWebsites.length > visibleCount
 
   const handleShowMore = () => {
     if (isExpanded) {

@@ -17,19 +17,31 @@ export default function Footer() {
               fostering innovation across Central India.
             </p>
             <div className="flex space-x-4">
-              <a href="https://www.facebook.com/LNCTGroupOfCollege/" className="text-gray-400 hover:text-blue-400 transition-colors">
+              <a
+                href="https://www.facebook.com/LNCTGroupOfCollege/"
+                className="text-gray-400 hover:text-blue-400 transition-colors"
+              >
                 <Facebook className="h-5 w-5" />
               </a>
               <a href="https://x.com/lnct_group" className="text-gray-400 hover:text-blue-400 transition-colors">
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="https://www.instagram.com/lnctgroupofcolleges/?hl=en" className="text-gray-400 hover:text-blue-400 transition-colors">
+              <a
+                href="https://www.instagram.com/lnctgroupofcolleges/?hl=en"
+                className="text-gray-400 hover:text-blue-400 transition-colors"
+              >
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="https://in.linkedin.com/school/lnct-group-of-colleges/" className="text-gray-400 hover:text-blue-400 transition-colors">
+              <a
+                href="https://in.linkedin.com/school/lnct-group-of-colleges/"
+                className="text-gray-400 hover:text-blue-400 transition-colors"
+              >
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="https://www.youtube.com/@LnctBroadcastingChannel/videos" className="text-gray-400 hover:text-blue-400 transition-colors">
+              <a
+                href="https://www.youtube.com/@LnctBroadcastingChannel/videos"
+                className="text-gray-400 hover:text-blue-400 transition-colors"
+              >
                 <Youtube className="h-5 w-5" />
               </a>
             </div>
@@ -62,24 +74,18 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Academic Programs */}
+          {/* Office Hours */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Office Hours</h3>
             <ul className="space-y-2">
               <li>
-                <a href="https://lnct.ac.in/gallery/" className="text-gray-300 hover:text-white transition-colors">
-                  Monday - Friday: 9:00 AM - 6:00 PM
-                </a>
+                <span className="text-gray-300">Monday - Friday: 9:00 AM - 6:00 PM</span>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors">
-                  Saturday: 9:00 AM - 2:00 PM
-                </a>
+                <span className="text-gray-300">Saturday: 9:00 AM - 2:00 PM</span>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors">
-                  Sunday: Closed
-                </a>
+                <span className="text-gray-300">Sunday: Closed</span>
               </li>
             </ul>
           </div>
@@ -102,7 +108,11 @@ export default function Footer() {
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-blue-400 flex-shrink-0" />
-                <a href="" className="text-gray-300 hover:underline" > info@lnctgroup.in </a>
+               <span
+                  className="text-gray-300"
+                >
+                  info@lnctgroup.in
+                </span>
               </div>
             </div>
           </div>
@@ -112,10 +122,16 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">© 2024 LNCT Group. All rights reserved.</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <Link href="https://lnct.ac.in/privacy-policy-2/" className="text-gray-400 hover:text-white text-sm transition-colors">
+              <Link
+                href="https://lnct.ac.in/privacy-policy-2/"
+                className="text-gray-400 hover:text-white text-sm transition-colors"
+              >
                 Privacy Policy
               </Link>
-              <Link href="https://lnct.ac.in/terms-and-conditions/" className="text-gray-400 hover:text-white text-sm transition-colors">
+              <Link
+                href="https://lnct.ac.in/terms-and-conditions/"
+                className="text-gray-400 hover:text-white text-sm transition-colors"
+              >
                 Terms of Service
               </Link>
             </div>

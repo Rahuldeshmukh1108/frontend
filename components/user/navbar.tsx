@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { Menu, User } from "lucide-react"
+import { Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 
@@ -40,12 +40,12 @@ export default function Navbar() {
                 {item.name}
               </Link>
             ))}
-            <Link href="/auth/login">
+            {/* <Link href="/auth/login">
               <Button variant="outline" size="sm" className="ml-4">
                 <User className="h-4 w-4 mr-2" />
                 Login
               </Button>
-            </Link>
+            </Link> */}
           </div>
 
           {/* Mobile Navigation */}
@@ -68,12 +68,12 @@ export default function Navbar() {
                       {item.name}
                     </Link>
                   ))}
-                  <Link href="/auth/login" onClick={() => setIsOpen(false)}>
+                  {/* <Link href="/auth/login" onClick={() => setIsOpen(false)}>
                     <Button className="w-full mt-4">
                       <User className="h-4 w-4 mr-2" />
                       Login
                     </Button>
-                  </Link>
+                  </Link> */}
                 </div>
               </SheetContent>
             </Sheet>

@@ -3,8 +3,8 @@
 import type React from "react"
 
 import { useState, useEffect } from "react"
-import Navbar from "@/components/navbar"
-import Footer from "@/components/footer"
+import Navbar from "@/components/user/navbar"
+import Footer from "@/components/user/footer"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -77,46 +77,68 @@ export default function ContactPage() {
     setIsSubmitting(true)
 
     try {
-      // Mock API call - replace with your actual API endpoint
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      })
+      // Create email body with form data
+      const emailBody = `Hello,
 
-      if (!response.ok) {
-        throw new Error("Failed to send message")
-      }
+I am contacting you through your website contact form. Please find my details below:
+
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone || "Not provided"}
+Inquiry Type: ${inquiryTypes.find((type) => type.value === formData.inquiryType)?.label || "General Inquiry"}
+
+Subject: ${formData.subject}
+
+Message:
+${formData.message}
+
+Thank you for your time. I look forward to hearing from you soon.
+
+Best regards,
+${formData.name}`
+
+      // Create mailto link with proper encoding
+      const subject = encodeURIComponent(`Contact Form: ${formData.subject}`)
+      const body = encodeURIComponent(emailBody)
+      const recipientEmail = "info@lnctgroup.in"
+      const mailtoLink = `mailto:${recipientEmail}?subject=${subject}&body=${body}`
+
+      // Method 1: Direct window.location (most reliable)
+      window.location.href = mailtoLink
+
+      // Fallback method if the above doesn't work
+      setTimeout(() => {
+        const link = document.createElement("a")
+        link.href = mailtoLink
+        link.target = "_blank"
+        link.rel = "noopener noreferrer"
+        document.body.appendChild(link)
+        link.click()
+        document.body.removeChild(link)
+      }, 100)
 
       toast({
-        title: "Message Sent Successfully! 🎉",
-        description: "We'll get back to you within 24 hours.",
+        title: "Opening Email Client 📧",
+        description: "Your default email application should open with the pre-filled message.",
       })
 
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        subject: "",
-        message: "",
-        inquiryType: "general",
-      })
-    } catch {
-      // Fallback to mock success for demo
+      // Reset form after successful submission
+      setTimeout(() => {
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          subject: "",
+          message: "",
+          inquiryType: "general",
+        })
+      }, 2000)
+    } catch (err) {
+      console.error("Error opening email client:", err)
       toast({
-        title: "Message Sent Successfully! 🎉",
-        description: "We'll get back to you within 24 hours.",
-      })
-
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        subject: "",
-        message: "",
-        inquiryType: "general",
+        title: "Error",
+        description: "Unable to open email client. Please copy this email: info@lnctgroup.in",
+        variant: "destructive",
       })
     } finally {
       setIsSubmitting(false)
@@ -142,7 +164,6 @@ export default function ContactPage() {
       details: ["info@lnctgroup.in", "admissions@lnctgroup.in", "support@lnctgroup.in"],
       color: "from-purple-500 to-pink-600",
     },
-   
   ]
 
   const stats = [
@@ -424,8 +445,6 @@ export default function ContactPage() {
                   )
                 })}
               </div>
-
-          
             </div>
           </div>
         </div>
