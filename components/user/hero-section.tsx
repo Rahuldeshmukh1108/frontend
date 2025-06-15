@@ -46,6 +46,7 @@ const heroImages = [
 
 export default function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -55,6 +56,16 @@ export default function HeroSection() {
     return () => clearInterval(timer)
   }, [])
 
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+
+    checkMobile()
+    window.addEventListener("resize", checkMobile)
+    return () => window.removeEventListener("resize", checkMobile)
+  }, [])
+
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % heroImages.length)
   }
@@ -62,20 +73,6 @@ export default function HeroSection() {
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + heroImages.length) % heroImages.length)
   }
-
-  const [isMobile, setIsMobile] = useState(false)
-
-useEffect(() => {
-  const checkMobile = () => {
-    setIsMobile(window.innerWidth < 1440
-      
-    )
-  }
-
-  checkMobile()
-  window.addEventListener("resize", checkMobile)
-  return () => window.removeEventListener("resize", checkMobile)
-}, [])
 
   return (
     <section className="relative h-screen overflow-hidden">
@@ -88,7 +85,14 @@ useEffect(() => {
               index === currentSlide ? "opacity-100" : "opacity-0"
             }`}
           >
-            <Image src={isMobile ? image.mobile : image.desktop} alt={image.title} className="w-full h-full object-cover"/>
+            <Image
+              src={isMobile ? image.mobile : image.desktop}
+              alt={image.title}
+              fill
+              priority={index === currentSlide}
+              sizes="100vw"
+              className="object-cover w-full h-full"
+            />
             <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
           </div>
         ))}
@@ -188,32 +192,32 @@ useEffect(() => {
           from { opacity: 0; transform: translateY(30px); }
           to { opacity: 1; transform: translateY(0); }
         }
-        
+
         @keyframes slide-up {
           from { transform: translateY(100%); }
           to { transform: translateY(0); }
         }
-        
+
         .animate-fade-in {
           animation: fade-in 1s ease-out;
         }
-        
+
         .animate-fade-in-delay {
           animation: fade-in 1s ease-out 0.3s both;
         }
-        
+
         .animate-fade-in-delay-2 {
           animation: fade-in 1s ease-out 0.6s both;
         }
-        
+
         .animate-fade-in-delay-3 {
           animation: fade-in 1s ease-out 0.9s both;
         }
-        
+
         .animate-slide-up {
           animation: slide-up 0.8s ease-out;
         }
-        
+
         .animate-slide-up-delay {
           animation: slide-up 0.8s ease-out 0.2s both;
         }

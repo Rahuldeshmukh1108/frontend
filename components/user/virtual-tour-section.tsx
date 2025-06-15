@@ -1,35 +1,35 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import {
   ExternalLink,
   Maximize,
   MapPin,
-  
   Building,
- 
   Loader2,
- 
   Eye,
 } from "lucide-react"
 
 export default function VirtualTourSection() {
   const [isFullscreen, setIsFullscreen] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
- 
-  const tourUrl = "https://tour.lnct.ac.in/LNCT/"
+  const [hasMounted, setHasMounted] = useState(false)
 
+  useEffect(() => {
+    setHasMounted(true)
+  }, [])
+
+  if (!hasMounted) return null
+
+  const tourUrl = "https://tour.lnct.ac.in/LNCT/"
 
   const stats = [
     { label: "Campus Area", value: "100+", unit: "Acres", icon: MapPin },
     { label: "Academic Blocks", value: "8+", unit: "Buildings", icon: Building },
     { label: "Laboratories", value: "50+", unit: "Labs", icon: Building },
-  
   ]
-
-  
 
   const handleFullscreen = () => {
     setIsFullscreen(!isFullscreen)
@@ -42,7 +42,7 @@ export default function VirtualTourSection() {
   return (
     <>
       <section className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white relative overflow-hidden">
-        {/* Animated Background Elements */}
+        {/* Animated Background */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
@@ -50,7 +50,6 @@ export default function VirtualTourSection() {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          {/* Header Section */}
           <div className="text-center mb-12 animate-fade-in-up">
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-sm border border-white/10 rounded-full px-6 py-2 mb-6">
               <Eye className="h-4 w-4 text-cyan-400 animate-pulse" />
@@ -65,9 +64,8 @@ export default function VirtualTourSection() {
             </p>
           </div>
 
-          {/* Main Content Grid */}
           <div className="grid lg:grid-cols-4 gap-6 h-[calc(100vh-300px)] min-h-[600px]">
-            {/* Virtual Tour Viewer - Takes 3 columns */}
+            {/* Tour Viewer */}
             <div className="lg:col-span-3 space-y-4">
               <Card className="bg-black/40 backdrop-blur-xl border-white/10 shadow-2xl h-full flex flex-col">
                 <CardHeader className="pb-4">
@@ -117,17 +115,14 @@ export default function VirtualTourSection() {
                       loading="lazy"
                       onLoad={() => setIsLoading(false)}
                     />
-                 
                   </div>
                 </CardContent>
               </Card>
             </div>
 
-            {/* Sidebar - Takes 1 column */}
+            {/* Sidebar */}
             <div className="space-y-4 h-full overflow-y-auto custom-scrollbar">
-             
-
-              {/* Campus Stats */}
+              {/* Stats */}
               <Card className="bg-black/40 backdrop-blur-xl border-white/10 shadow-xl">
                 <CardHeader className="pb-3">
                   <CardTitle className="text-white flex items-center gap-2">
@@ -159,7 +154,7 @@ export default function VirtualTourSection() {
                 </CardContent>
               </Card>
 
-              {/* Tour Controls */}
+              {/* Quick Actions */}
               <Card className="bg-black/40 backdrop-blur-xl border-white/10 shadow-xl">
                 <CardHeader className="pb-3">
                   <CardTitle className="text-white">Quick Actions</CardTitle>
