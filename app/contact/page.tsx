@@ -186,7 +186,7 @@ ${formData.name}`
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-purple-900 via-slate-800 to-black text-white py-24 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-purple-900 to-black text-white py-24 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div
             className="absolute inset-0"
