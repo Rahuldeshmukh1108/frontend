@@ -10,39 +10,34 @@ export default function AboutSection() {
   const [showCards, setShowCards] = useState([false, false, false, false])
   const sectionRef = useRef<HTMLElement>(null)
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
+useEffect(() => {
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        setIsVisible(true)
+        setTimeout(() => setShowStats(true), 800)
 
-          // Stagger the stats animation
-          setTimeout(() => setShowStats(true), 800)
+        // Use fixed length to avoid using showCards
+        Array.from({ length: 4 }).forEach((_, index) => {
+          setTimeout(() => {
+            setShowCards((prev) => {
+              const newState = [...prev]
+              newState[index] = true
+              return newState
+            })
+          }, 1200 + index * 200)
+        })
+      }
+    },
+    { threshold: 0.1 }
+  )
 
-          // Stagger the cards animation
-          showCards.forEach((_, index) => {
-            setTimeout(
-              () => {
-                setShowCards((prev) => {
-                  const newState = [...prev]
-                  newState[index] = true
-                  return newState
-                })
-              },
-              1200 + index * 200,
-            )
-          })
-        }
-      },
-      { threshold: 0.1 },
-    )
+  if (sectionRef.current) {
+    observer.observe(sectionRef.current)
+  }
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
-    return () => observer.disconnect()
-  }, [])
+  return () => observer.disconnect()
+}, []) // <-- keep dependency array empty
 
   const features = [
     {

@@ -4,6 +4,7 @@ import DirectorySection from "@/components/user/directory-section"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { GraduationCap, Users, MapPin, ExternalLink } from "lucide-react"
+import Image from "next/image"
 
 export default function InstitutionPage() {
   const institutionStats = [
@@ -93,7 +94,7 @@ export default function InstitutionPage() {
             {featuredInstitutions.map((institution, index) => (
               <Card key={index} className="overflow-hidden hover:shadow-xl transition-shadow">
                 <div className="aspect-video overflow-hidden">
-                  <img
+                  <Image
                     src={institution.image || "/placeholder.svg"}
                     alt={institution.name}
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"

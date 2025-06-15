@@ -1,3 +1,11 @@
+interface SignupUserData {
+  email: string;
+  password: string;
+  name: string;
+  userType: string;
+  institution: string;
+}
+
 export const mockApi = {
   // Authentication
   login: async (email: string, password: string) => {
@@ -18,7 +26,7 @@ export const mockApi = {
     throw new Error("Invalid credentials")
   },
 
-  signup: async (userData: any) => {
+  signup: async (userData: SignupUserData) => {
     await new Promise((resolve) => setTimeout(resolve, 1500))
     return {
       success: true,
@@ -31,7 +39,7 @@ export const mockApi = {
   },
 
   // Contact form
-  submitContactForm: async (formData: any) => {
+  submitContactForm: async (formData: { name: string; email: string; message: string }) => {
     await new Promise((resolve) => setTimeout(resolve, 2000))
 
     // Simulate email sending
