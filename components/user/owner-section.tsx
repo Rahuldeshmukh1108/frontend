@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Quote } from "lucide-react"
+import Image from "next/image"
 
 export default function OwnerSection() {
   return (
@@ -16,7 +17,7 @@ export default function OwnerSection() {
           <Card className="text-center p-8 hover:shadow-xl transition-shadow">
             <CardContent className="p-0">
               <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
-                <img
+                <Image
                   src="/images/jainarainchouksey.jpeg?height=128&width=128"
                   alt="Chairman"
                   className="w-28 h-28 rounded-full object-cover"
@@ -26,8 +27,8 @@ export default function OwnerSection() {
               <p className="text-blue-600 font-semibold mb-4">Chairman & Founder</p>
               <Quote className="h-8 w-8 text-blue-300 mx-auto mb-4" />
               <p className="text-gray-600 italic">
-                "Education is the foundation of progress. Our mission is to create leaders who will shape the future of
-                our nation."
+                &quot;Education is the foundation of progress. Our mission is to create leaders who will shape the future of
+                our nation.&quot;
               </p>
             </CardContent>
           </Card>
@@ -35,7 +36,7 @@ export default function OwnerSection() {
           <Card className="text-center p-8 hover:shadow-xl transition-shadow">
             <CardContent className="p-0">
               <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
-                <img
+                <Image
                   src="/images/choukseymam.jpeg?height=128&width=128"
                   alt="Director"
                   className="w-28 h-28 rounded-full object-cover"
@@ -45,8 +46,8 @@ export default function OwnerSection() {
               <p className="text-green-600 font-semibold mb-4">Vice Chairperson</p>
               <Quote className="h-8 w-8 text-green-300 mx-auto mb-4" />
               <p className="text-gray-600 italic">
-                "We believe in nurturing not just academic excellence but also character and values that last a
-                lifetime."
+                &quot;We believe in nurturing not just academic excellence but also character and values that last a
+                lifetime.&quot;
               </p>
             </CardContent>
           </Card>
@@ -54,7 +55,7 @@ export default function OwnerSection() {
           <Card className="text-center p-8 hover:shadow-xl transition-shadow">
             <CardContent className="p-0">
               <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center">
-                <img
+                <Image
                   src="/images/anupamchouksey.jpeg?height=128&width=128"
                   alt="Vice Chairman"
                   className="w-28 h-28 rounded-full object-cover"
@@ -64,7 +65,7 @@ export default function OwnerSection() {
               <p className="text-purple-600 font-semibold mb-4">Secretary</p>
               <Quote className="h-8 w-8 text-purple-300 mx-auto mb-4" />
               <p className="text-gray-600 italic">
-                "Innovation and technology are the pillars of modern education. We strive to stay ahead of the curve."
+                &quot;Innovation and technology are the pillars of modern education. We strive to stay ahead of the curve.&quot;
               </p>
             </CardContent>
           </Card>
@@ -79,7 +80,7 @@ export default function OwnerSection() {
                 a single institution to a comprehensive educational ecosystem. Under the leadership of the Chouksey
                 family, we have consistently maintained our commitment to excellence, innovation, and social
                 responsibility. Our journey of over two decades reflects our dedication to creating future leaders and
-                contributing to the nation's progress.
+                contributing to the nation&#39;s progress.
               </p>
             </CardContent>
           </Card>

@@ -1,15 +1,16 @@
-import Navbar from "@/components/navbar"
-import Footer from "@/components/footer"
-import DirectorySection from "@/components/directory-section"
+import Navbar from "@/components/user/navbar"
+import Footer from "@/components/user/footer"
+import DirectorySection from "@/components/user/directory-section"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { GraduationCap, Users, MapPin, ExternalLink } from "lucide-react"
+import Image from "next/image"
 
 export default function InstitutionPage() {
   const institutionStats = [
     { label: "Total Institutions", value: "25+", icon: GraduationCap },
     { label: "Students Enrolled", value: "50,000+", icon: Users },
-    { label: "Cities Covered", value: "5+", icon: MapPin },
+    { label: "Cities Covered", value: "10+", icon: MapPin },
     { label: "Years of Excellence", value: "20+", icon: GraduationCap },
   ]
 
@@ -93,7 +94,7 @@ export default function InstitutionPage() {
             {featuredInstitutions.map((institution, index) => (
               <Card key={index} className="overflow-hidden hover:shadow-xl transition-shadow">
                 <div className="aspect-video overflow-hidden">
-                  <img
+                  <Image
                     src={institution.image || "/placeholder.svg"}
                     alt={institution.name}
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"

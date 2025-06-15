@@ -44,7 +44,7 @@ export default function LoginPage() {
 
       // Redirect to dashboard or home page
       // router.push('/dashboard')
-    } catch (error) {
+    } catch {
       toast({
         title: "Login Failed",
         description: "Invalid email or password. Please try again.",
@@ -171,7 +171,7 @@ export default function LoginPage() {
             </Button>
 
             <div className="text-center text-sm">
-              <span className="text-gray-600">Don't have an account? </span>
+              <span className="text-gray-600">Do not have an account? </span>
               <Link href="/auth/signup" className="text-blue-600 hover:underline font-medium">
                 Sign up
               </Link>

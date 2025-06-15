@@ -4,6 +4,7 @@ import { useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight, X, Eye } from "lucide-react"
+import Image from "next/image"
 
 const galleryImages = [
   { id: 1, src: "/images/main2.jpg?height=400&width=600", alt: "Campus Main Building", category: "Campus" },
@@ -186,7 +187,7 @@ export default function GallerySection() {
                   <div className="relative overflow-hidden">
                     {/* Image */}
                     <div className="relative">
-                      <img
+                      <Image
                         src={image.src || "/placeholder.svg"}
                         alt={image.alt}
                         className={`w-full ${getImageHeight()} object-cover transition-transform duration-700 group-hover:scale-110`}
@@ -274,7 +275,7 @@ export default function GallerySection() {
 
               {/* Image Container */}
               <div className="w-full h-full flex items-center justify-center p-16">
-                <img
+                <Image
                   src={selectedImageData.src || "/placeholder.svg"}
                   alt={selectedImageData.alt}
                   className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"

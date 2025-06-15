@@ -3,8 +3,8 @@
 import type React from "react"
 
 import { useEffect, useRef, useState } from "react"
-import Navbar from "@/components/navbar"
-import Footer from "@/components/footer"
+import Navbar from "@/components/user/navbar"
+import Footer from "@/components/user/footer"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { GraduationCap, Users, Award, Globe, BookOpen, Microscope, Star, Lightbulb, Shield, Globe2 } from "lucide-react"

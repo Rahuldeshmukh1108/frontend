@@ -4,6 +4,8 @@ import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, BookOpen, Users, Award, ChevronLeft, ChevronRight } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
+
 const heroImages = [
   {
     desktop: "/images/main.jpg?height=800&width=1200",
@@ -86,7 +88,7 @@ useEffect(() => {
               index === currentSlide ? "opacity-100" : "opacity-0"
             }`}
           >
-            <img src={isMobile ? image.mobile : image.desktop} alt={image.title} className="w-full h-full object-cover"/>
+            <Image src={isMobile ? image.mobile : image.desktop} alt={image.title} className="w-full h-full object-cover"/>
             <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
           </div>
         ))}

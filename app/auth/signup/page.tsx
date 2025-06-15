@@ -69,7 +69,7 @@ export default function SignupPage() {
 
       // Redirect to login or dashboard
       // router.push('/auth/login')
-    } catch (error) {
+    } catch {
       toast({
         title: "Registration Failed",
         description: "Something went wrong. Please try again.",
