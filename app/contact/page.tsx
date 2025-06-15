@@ -2,6 +2,7 @@
 
 import type React from "react"
 
+
 import { useState, useEffect } from "react"
 import Navbar from "@/components/user/navbar"
 import Footer from "@/components/user/footer"
@@ -13,6 +14,7 @@ import { Label } from "@/components/ui/label"
 
 import { MapPin, Phone, Mail, Clock, Send, Users, MessageSquare, HeadphonesIcon, Star, Shield } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
+
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -62,88 +64,64 @@ export default function ContactPage() {
     }
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault()
 
-    if (!validateForm()) {
-      toast({
-        title: "Validation Error",
-        description: "Please fix the errors in the form",
-        variant: "destructive",
-      })
-      return
-    }
-
-    setIsSubmitting(true)
-
-    try {
-      // Create email body with form data
-      const emailBody = `Hello,
-
-I am contacting you through your website contact form. Please find my details below:
-
-Name: ${formData.name}
-Email: ${formData.email}
-Phone: ${formData.phone || "Not provided"}
-Inquiry Type: ${inquiryTypes.find((type) => type.value === formData.inquiryType)?.label || "General Inquiry"}
-
-Subject: ${formData.subject}
-
-Message:
-${formData.message}
-
-Thank you for your time. I look forward to hearing from you soon.
-
-Best regards,
-${formData.name}`
-
-      // Create mailto link with proper encoding
-      const subject = encodeURIComponent(`Contact Form: ${formData.subject}`)
-      const body = encodeURIComponent(emailBody)
-      const recipientEmail = "info@lnctgroup.in"
-      const mailtoLink = `mailto:${recipientEmail}?subject=${subject}&body=${body}`
-
-      // Method 1: Direct window.location (most reliable)
-      window.location.href = mailtoLink
-
-      // Fallback method if the above doesn't work
-      setTimeout(() => {
-        const link = document.createElement("a")
-        link.href = mailtoLink
-        link.target = "_blank"
-        link.rel = "noopener noreferrer"
-        document.body.appendChild(link)
-        link.click()
-        document.body.removeChild(link)
-      }, 100)
-
-      toast({
-        title: "Opening Email Client 📧",
-        description: "Your default email application should open with the pre-filled message.",
-      })
-
-      // Reset form after successful submission
-      setTimeout(() => {
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          subject: "",
-          message: "",
-          inquiryType: "general",
-        })
-      }, 2000)
-    } catch (err) {
-      console.error("Error opening email client:", err)
-      toast({
-        title: "Error",
-        description: "Unable to open email client. Please copy this email: info@lnctgroup.in",
-        variant: "destructive",
-      })
-    } finally {
-      setIsSubmitting(false)
-    }
+  if (!validateForm()) {
+    toast({
+      title: "Validation Error ❌",
+      description: "Please fix the errors in the form.",
+      variant: "destructive",
+    })
+    return
   }
+
+  setIsSubmitting(true)
+
+  try {
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    })
+
+    if (response.ok) {
+      toast({
+        title: "✅ Message Sent!",
+        description: "Thank you for contacting us. We’ll get back to you soon.",
+      })
+
+      // Reset the form
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        subject: "",
+        message: "",
+        inquiryType: "general",
+      })
+    } else {
+      toast({
+        title: "❌ Failed to Send",
+        description: "Something went wrong. Please try again.",
+        variant: "destructive",
+      })
+    }
+  }  catch (err: unknown) {
+  console.error("Send Message Error:", err)
+
+  toast({
+    title: "❌ Error Sending Message",
+    description: "Please check your internet connection or try again later.",
+    variant: "destructive",
+  })
+}
+ finally {
+    setIsSubmitting(false)
+  }
+}
+
+
 
   const contactInfo = [
     {
@@ -161,7 +139,7 @@ ${formData.name}`
     {
       icon: Mail,
       title: "Email Addresses",
-      details: ["info@lnctgroup.in", "admissions@lnctgroup.in", "support@lnctgroup.in"],
+      details: ["info@lnct.ac.in", "admissions@lnctgroup.in", "support@lnctgroup.in"],
       color: "from-purple-500 to-pink-600",
     },
   ]
@@ -298,7 +276,8 @@ ${formData.name}`
                       <Input
                         id="phone"
                         name="phone"
-                        type="tel"
+                        type="number"
+                        required
                         value={formData.phone}
                         onChange={handleInputChange}
                         className="transition-all duration-300 focus:scale-105"
